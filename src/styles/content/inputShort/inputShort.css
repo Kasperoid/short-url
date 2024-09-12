@@ -1,0 +1,12 @@
+.inputContainer {
+  background-color: rgb(58, 48, 83);
+  padding: 40px;
+  border-radius: 10px;
+  background-image: url("./../../../images/bg-shorten-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.saveInputContainer {
+  padding-top: 80px;
+}/*# sourceMappingURL=inputShort.css.map */
