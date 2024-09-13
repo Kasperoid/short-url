@@ -3,7 +3,7 @@ import './styles/global/global.css';
 import { Layout } from 'antd';
 import HeaderContainer from './components/Header/HeaderContainer';
 import IntroContainer from './components/Content/Intro/IntroContainer';
-import MainContentCotainer from './components/Content/MainContentContainer';
+import MainContentCotainer from './components/Content/MainContent/MainContentContainer';
 
 function App() {
   const { Content } = Layout;
