@@ -1,10 +1,10 @@
-import React, { ReactNode } from 'react';
-import { Row } from 'antd';
-import './../../../../styles/content/statistic/statistic.css';
+import { ReactNode } from 'react';
 import { RecognitionIcon } from '../../../Icons/Icons';
 import { DetailedIcon } from '../../../Icons/Icons';
 import { CustomizableIcon } from '../../../Icons/Icons';
 import StatisticsCard from './StatisticsCard';
+import { StatisticLineStyled } from '../../../../styles/content/statistic/StatisticLineStyled';
+import { StatisticsCardsContainerStyled } from '../../../../styles/content/statistic/StatisticsCardsContainerStyled';
 
 const StatisticsCards = () => {
   type cardsOptionType = {
@@ -30,23 +30,12 @@ const StatisticsCards = () => {
     },
   ];
   return (
-    <Row gutter={30} style={{ position: 'relative', zIndex: 2 }}>
+    <StatisticsCardsContainerStyled gutter={[30, { sm: 80, xs: 80 }]}>
       {cardsOptions.map((item, index) => (
-        <StatisticsCard {...item} index={index} />
+        <StatisticsCard {...item} index={index} key={index + 1} />
       ))}
-      <div
-        style={{
-          height: '7px',
-          backgroundColor: 'rgb(41, 209, 206)',
-          position: 'absolute',
-          margin: '0 30px',
-          top: '50%',
-          left: 0,
-          right: 0,
-          zIndex: -1,
-        }}
-      />
-    </Row>
+      <StatisticLineStyled />
+    </StatisticsCardsContainerStyled>
   );
 };
 
