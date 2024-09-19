@@ -1,24 +1,24 @@
-import React from 'react';
-import { Typography, Flex, Space } from 'antd';
+import { Flex } from 'antd';
 import StatisticsCards from './StatisticsCards';
+import { HStyled } from '../../../../styles/HStyled';
+import { TextStyled } from '../../../../styles/TextStyled';
+import { StatisticHeaderContainerStyled } from '../../../../styles/content/statistic/StatisticHeaderContainerStyled';
+import { StatisticsContainerStyled } from '../../../../styles/content/statistic/StatisticsContainerStyled';
 
 const StatisticsContainer = () => {
-  const { Text, Title } = Typography;
   return (
-    <Space direction="vertical" size={60}>
+    <StatisticsContainerStyled direction="vertical">
       <Flex justify="center">
-        <div style={{ maxWidth: '400px', textAlign: 'center' }}>
-          <Title level={2} type="secondary" style={{ fontWeight: 700 }}>
-            Advanced Statistics
-          </Title>
-          <Text>
+        <StatisticHeaderContainerStyled direction="vertical" size={15}>
+          <HStyled titlelevel={'h2'}>Advanced Statistics</HStyled>
+          <TextStyled lineheight={1.7} size={'cardText'}>
             Track how your links are performing across the web with our advanced
             statistics dashboard
-          </Text>
-        </div>
+          </TextStyled>
+        </StatisticHeaderContainerStyled>
       </Flex>
       <StatisticsCards />
-    </Space>
+    </StatisticsContainerStyled>
   );
 };
 
