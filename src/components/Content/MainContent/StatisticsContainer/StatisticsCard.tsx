@@ -1,5 +1,8 @@
-import React, { ReactNode } from 'react';
-import { Col, Typography } from 'antd';
+import { ReactNode } from 'react';
+import { StatisticsCardContainerInnerStyled } from '../../../../styles/content/statistic/StatisticsCardContainerInnerStyled';
+import { StatisticsCardContainerStyled } from '../../../../styles/content/statistic/StatisticsCardContainerStyled';
+import { HStyled } from '../../../../styles/HStyled';
+import { TextStyled } from '../../../../styles/TextStyled';
 
 type StatisticsCardProps = {
   title: string;
@@ -9,24 +12,16 @@ type StatisticsCardProps = {
 };
 
 const StatisticsCard = ({ title, text, index, icon }: StatisticsCardProps) => {
-  const { Text, Title } = Typography;
   return (
-    <Col span={8} style={{ marginTop: `${40 * index}px` }}>
-      <div
-        style={{
-          backgroundColor: 'white',
-          padding: '50px 30px 25px 30px',
-          borderRadius: '7px',
-          position: 'relative',
-        }}
-      >
+    <StatisticsCardContainerStyled index={index} lg={8} xs={24}>
+      <StatisticsCardContainerInnerStyled vertical>
         {icon}
-        <Title level={4} type="secondary" style={{ fontWeight: '700' }}>
-          {title}
-        </Title>
-        <Text>{text}</Text>
-      </div>
-    </Col>
+        <HStyled titlelevel={'h3'}>{title}</HStyled>
+        <TextStyled size={'cardText'} color={'primary'}>
+          {text}
+        </TextStyled>
+      </StatisticsCardContainerInnerStyled>
+    </StatisticsCardContainerStyled>
   );
 };
 
