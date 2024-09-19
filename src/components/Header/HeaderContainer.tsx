@@ -1,36 +1,21 @@
-import React from 'react';
-import { Layout, Flex, Button } from 'antd';
-import '../../styles/header/header.css';
+import React, { useState } from 'react';
+import { HeaderContainerStyled } from '../../styles/header/HeaderContainerStyled';
+import { ContainerStyled } from '../../styles/containers/ContainerStyled';
+import { ContainerInnerStyled } from '../../styles/containers/ContainerInnerStyled';
+import HeaderMenuNav from './HeaderMenuNav';
+import HeaderMobMenu from './HeaderMobMenu';
 
 const HeaderContainer = () => {
-  const { Header } = Layout;
-  const options: string[] = ['Features', 'Pricing', 'Resources'];
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
   return (
-    <div className="container">
-      <div className="conitainer-inner">
-        <Header
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            backgroundColor: 'white',
-            padding: 0,
-          }}
-        >
-          <div className="header-logo" />
-          <Flex>
-            {options.map((item, index) => (
-              <Button
-                style={{ fontWeight: 600, fontSize: '16px' }}
-                type="link"
-                key={index + 1}
-              >
-                {item}
-              </Button>
-            ))}
-          </Flex>
-        </Header>
-      </div>
-    </div>
+    <ContainerStyled>
+      <ContainerInnerStyled>
+        <HeaderContainerStyled>
+          <HeaderMenuNav setOpenMenu={setOpenMenu} />
+          <HeaderMobMenu openMenu={openMenu} />
+        </HeaderContainerStyled>
+      </ContainerInnerStyled>
+    </ContainerStyled>
   );
 };
 
