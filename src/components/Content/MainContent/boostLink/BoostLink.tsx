@@ -1,18 +1,18 @@
-import React from 'react';
-import { Typography, Button, Space } from 'antd';
-import './../../../../styles/content/boostLink/boostLink.css';
+import { ButtonStyled } from '../../../../styles/ButtonStyled';
+import { BoostLinkContainerStyled } from '../../../../styles/content/boostLink/BoostLinkContainerStyled';
+import { HStyled } from '../../../../styles/HStyled';
+import bg from './../../../../images/bg-boost-desktop.svg';
 
 const BoostLink = () => {
-  const { Title } = Typography;
   return (
-    <Space direction="vertical" size={20} className="boost-container">
-      <Title style={{ color: 'white', margin: 0 }} level={2}>
+    <BoostLinkContainerStyled bg={bg} direction="vertical" size={20}>
+      <HStyled titlelevel="h2" color="white">
         Boost your links today
-      </Title>
-      <Button type="primary" size={'large'} style={{ fontWeight: 600 }}>
+      </HStyled>
+      <ButtonStyled type="primary" color="primary" shape={'circle'}>
         Get Started
-      </Button>
-    </Space>
+      </ButtonStyled>
+    </BoostLinkContainerStyled>
   );
 };
 
