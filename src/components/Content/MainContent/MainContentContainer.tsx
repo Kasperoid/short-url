@@ -1,25 +1,18 @@
-import React from 'react';
 import InputShortContainer from './InputShort/InputShortContainer';
 import StatisticsContainer from './StatisticsContainer/StatisticsContainer';
-import { Flex } from 'antd';
 import BoostLink from './boostLink/BoostLink';
+import { ContainerInnerStyled } from '../../../styles/containers/ContainerInnerStyled';
+import { ContainerStyled } from '../../../styles/containers/ContainerStyled';
 
 const MainContentCotainer = () => {
   return (
-    <Flex
-      vertical
-      align="center"
-      className="container"
-      style={{
-        backgroundColor: 'rgb(240, 241, 246)',
-      }}
-    >
-      <div className="conitainer-inner">
+    <ContainerStyled $bgc="tertiary" className="container-main-content">
+      <ContainerInnerStyled>
         <InputShortContainer />
         <StatisticsContainer />
-      </div>
+      </ContainerInnerStyled>
       <BoostLink />
-    </Flex>
+    </ContainerStyled>
   );
 };
 
