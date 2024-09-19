@@ -1,56 +1,54 @@
-import React from 'react';
-import './../../../styles/content/intro/intro.css';
-import { Row, Col, Typography, Button, Space } from 'antd';
+import { Col, Space, Flex } from 'antd';
+import { ContainerStyled } from '../../../styles/containers/ContainerStyled';
+import { ContainerInnerStyled } from '../../../styles/containers/ContainerInnerStyled';
+import { ButtonStyled } from '../../../styles/ButtonStyled';
+import { IntroSvg } from '../../Icons/Icons';
+import { IntroRow } from '../../../styles/content/intro/IntroRow';
+import { IntroTextContainerStyled } from '../../../styles/content/intro/IntroTextContainerStyled';
+import { HStyled } from '../../../styles/HStyled';
+import { TextStyled } from '../../../styles/TextStyled';
 
 const IntroContainer = () => {
-  const { Title, Text } = Typography;
   return (
-    <div className="container">
-      <div className="conitainer-inner">
-        <Row
-          align={'middle'}
-          justify={'center'}
-          style={{ padding: '80px 0 120px 0' }}
-        >
+    <ContainerStyled>
+      <ContainerInnerStyled>
+        <IntroRow align={'middle'} justify={'center'}>
           <Col
             xl={9}
             lg={11}
             md={{ span: 12, order: 1 }}
             xs={{ span: 24, order: 2 }}
           >
-            <Space direction="vertical" size={0}>
-              <Title
-                type="secondary"
-                style={{ fontWeight: 700, fontSize: '60px', margin: 0 }}
-              >
-                More than just shorter links
-              </Title>
-              <Space direction="vertical" size={35}>
-                <Text style={{ fontSize: '18px' }}>
+            <IntroTextContainerStyled direction="vertical" size={0}>
+              <HStyled titlelevel="h1">More than just shorter links</HStyled>
+              <Space direction="vertical" size={25}>
+                <TextStyled size={'mainText'}>
                   Build your brand's recognition and get detailed insights on
                   how your links are perfoming
-                </Text>
-                <Button
-                  size="large"
-                  type="primary"
-                  style={{ fontWeight: '600' }}
+                </TextStyled>
+                <ButtonStyled
+                  type={'primary'}
+                  shape={'circle'}
+                  color={'primary'}
                 >
                   Get Started
-                </Button>
+                </ButtonStyled>
               </Space>
-            </Space>
+            </IntroTextContainerStyled>
           </Col>
           <Col
             xl={15}
             lg={13}
             md={{ span: 12, order: 2 }}
-            xs={{ span: 24, order: 1 }}
+            xs={{ span: 18, order: 1 }}
           >
-            <div className="intro-image" />
+            <Flex>
+              <IntroSvg />
+            </Flex>
           </Col>
-        </Row>
-      </div>
-    </div>
+        </IntroRow>
+      </ContainerInnerStyled>
+    </ContainerStyled>
   );
 };
 
