@@ -1,28 +1,49 @@
-import React from 'react';
-import { Flex, Button, Typography } from 'antd';
+import { ButtonLinkStyled } from '../../../../styles/ButtonLinkStyled';
+import { ButtonStyled } from '../../../../styles/ButtonStyled';
+import { SaveInputCardStyled } from '../../../../styles/content/saveInput/SaveInputCardStyled';
+import { SaveLinkContainerStyled } from '../../../../styles/content/saveInput/SaveLinkContainerStyled';
+import { TextStyled } from '../../../../styles/TextStyled';
+import { saveInput } from '../../../../types/types';
 
-const SaveInput = () => {
-  const { Text } = Typography;
+interface saveInputProps extends saveInput {
+  id: string;
+  copiedSet: React.Dispatch<React.SetStateAction<string | null>>;
+  active: boolean;
+}
+
+const SaveInput = ({
+  shortUrl,
+  inputUrl,
+  id,
+  copiedSet,
+  active,
+}: saveInputProps) => {
+  const onClickCopyHandler = (
+    event: React.MouseEvent<HTMLElement, MouseEvent>
+  ) => {
+    const target = event.target as HTMLButtonElement;
+    copiedSet(target.id);
+  };
   return (
-    <Flex
-      align="center"
-      justify="space-between"
-      style={{
-        padding: '10px 25px',
-        backgroundColor: 'white',
-        borderRadius: '5px',
-      }}
-    >
-      <Text>https://www.frontendmentor.io</Text>
-      <Flex align="center" gap={20}>
-        <Button type="link" style={{ color: '#2bd1d1' }}>
-          https://www.frontendmentor.io
-        </Button>
-        <Button style={{ fontWeight: 500 }} size="small" type="primary">
-          Copy
-        </Button>
-      </Flex>
-    </Flex>
+    <SaveInputCardStyled align="center" justify="space-between">
+      <TextStyled color={'quaternary'} size={'mainText'}>
+        {inputUrl}
+      </TextStyled>
+      <SaveLinkContainerStyled align="center">
+        <ButtonLinkStyled size={'mainText'} color={'special'} type="link">
+          {shortUrl}
+        </ButtonLinkStyled>
+        <ButtonStyled
+          className={active ? 'btn-copied' : ''}
+          id={id}
+          type="primary"
+          color={'primary'}
+          onClick={(event) => onClickCopyHandler(event)}
+        >
+          <span id={id}>{active ? 'Copied!' : 'Copy'}</span>
+        </ButtonStyled>
+      </SaveLinkContainerStyled>
+    </SaveInputCardStyled>
   );
 };
 
