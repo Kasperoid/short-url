@@ -11,13 +11,9 @@ export const SaveInputCardStyled = styled(Flex)<FlexProps>`
     @media (${baseTheme.size.media.sm}) {
       align-items: start;
       flex-direction: column;
-      min-width: 400px;
+      min-width: 100%;
       padding: 10px;
       margin: 0 auto;
-    }
-
-    @media (${baseTheme.size.media.xs}) {
-      min-width: 100%;
     }
   }
 `;
