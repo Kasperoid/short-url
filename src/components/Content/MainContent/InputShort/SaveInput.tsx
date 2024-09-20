@@ -40,7 +40,12 @@ const SaveInput = ({
         {inputUrl}
       </TextStyled>
       <SaveLinkContainerStyled align="center">
-        <ButtonLinkStyled size={'mainText'} color={'special'} type="link">
+        <ButtonLinkStyled
+          size={'mainText'}
+          color={'special'}
+          type="link"
+          href={shortUrl}
+        >
           {shortUrl}
         </ButtonLinkStyled>
         <ButtonStyled
