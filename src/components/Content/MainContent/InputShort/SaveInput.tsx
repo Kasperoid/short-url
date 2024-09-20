@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { useClipboard } from 'use-clipboard-copy';
 import { ButtonLinkStyled } from '../../../../styles/ButtonLinkStyled';
 import { ButtonStyled } from '../../../../styles/ButtonStyled';
 import { SaveInputCardStyled } from '../../../../styles/content/saveInput/SaveInputCardStyled';
@@ -21,9 +23,17 @@ const SaveInput = ({
   const onClickCopyHandler = (
     event: React.MouseEvent<HTMLElement, MouseEvent>
   ) => {
-    const target = event.target as HTMLButtonElement;
-    copiedSet(target.id);
+    clipboard.copy(shortUrl);
+    copiedSet(btnCopyRef.current?.id ? btnCopyRef.current.id : null);
+    const timer = setTimeout(() => {
+      copiedSet(null);
+      clearTimeout(timer);
+    }, 1500);
   };
+
+  const clipboard = useClipboard();
+  const btnCopyRef = useRef<HTMLAnchorElement | HTMLButtonElement>(null);
+
   return (
     <SaveInputCardStyled align="center" justify="space-between">
       <TextStyled color={'quaternary'} size={'mainText'}>
@@ -39,8 +49,9 @@ const SaveInput = ({
           type="primary"
           color={'primary'}
           onClick={(event) => onClickCopyHandler(event)}
+          ref={btnCopyRef}
         >
-          <span id={id}>{active ? 'Copied!' : 'Copy'}</span>
+          {active ? 'Copied!' : 'Copy'}
         </ButtonStyled>
       </SaveLinkContainerStyled>
     </SaveInputCardStyled>
