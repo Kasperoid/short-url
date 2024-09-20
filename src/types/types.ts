@@ -3,10 +3,11 @@ export type responseUrlType = {
 };
 
 export type errorType = {
-  error: string;
+  message: string;
 };
 
 export type saveInput = {
+  id: string;
   inputUrl: string;
   shortUrl: string;
 };
