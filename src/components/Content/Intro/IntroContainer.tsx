@@ -7,12 +7,13 @@ import { IntroRow } from '../../../styles/content/intro/IntroRow';
 import { IntroTextContainerStyled } from '../../../styles/content/intro/IntroTextContainerStyled';
 import { HStyled } from '../../../styles/global/HStyled';
 import { TextStyled } from '../../../styles/global/TextStyled';
+import { scrollToElement } from '../../../helpers/scrollToElem';
 
 const IntroContainer = () => {
   return (
     <ContainerStyled>
       <ContainerInnerStyled>
-        <IntroRow align={'middle'} justify={'center'}>
+        <IntroRow align={'middle'} justify={'center'} id="intro">
           <Col
             xl={9}
             lg={11}
@@ -30,6 +31,7 @@ const IntroContainer = () => {
                   type={'primary'}
                   shape={'circle'}
                   color={'primary'}
+                  onClick={() => scrollToElement('inputShort')}
                 >
                   Get Started
                 </ButtonStyled>

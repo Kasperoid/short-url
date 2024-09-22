@@ -61,6 +61,7 @@ const InputShortContainer = () => {
         <Flex gap={error ? 30 : 15} align={'center'} className="inputContainer">
           <Flex flex={1} style={{ position: 'relative' }}>
             <InputShortStyled
+              id="inputShort"
               value={inputValue}
               status={error ? 'error' : ''}
               placeholder="Shorten a link here..."

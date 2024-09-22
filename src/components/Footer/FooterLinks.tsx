@@ -1,10 +1,12 @@
 import { Flex, Space } from 'antd';
+import { scrollToElement } from '../../helpers/scrollToElem';
 import { ButtonLinkStyled } from '../../styles/global/ButtonLinkStyled';
 import { HStyled } from '../../styles/global/HStyled';
+import { linksScroll } from '../../types/types';
 
 type FooterLinksProps = {
   columnTitle: string;
-  columnLinks: string[];
+  columnLinks: linksScroll[];
 };
 
 const FooterLinks = ({ columnTitle, columnLinks }: FooterLinksProps) => {
@@ -20,8 +22,9 @@ const FooterLinks = ({ columnTitle, columnLinks }: FooterLinksProps) => {
             type="link"
             weight={'semiBold'}
             colorhover={'special'}
+            onClick={() => scrollToElement(item.to)}
           >
-            {item}
+            {item.text}
           </ButtonLinkStyled>
         ))}
       </Space>

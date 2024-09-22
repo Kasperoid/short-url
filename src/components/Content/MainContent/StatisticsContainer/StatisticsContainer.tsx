@@ -7,7 +7,7 @@ import { StatisticsContainerStyled } from '../../../../styles/content/statistic/
 
 const StatisticsContainer = () => {
   return (
-    <StatisticsContainerStyled direction="vertical">
+    <StatisticsContainerStyled direction="vertical" id="statistic">
       <Flex justify="center">
         <StatisticHeaderContainerStyled direction="vertical" size={15}>
           <HStyled titlelevel={'h2'}>Advanced Statistics</HStyled>

@@ -2,6 +2,7 @@ import { ButtonStyled } from '../../../../styles/global/ButtonStyled';
 import { BoostLinkContainerStyled } from '../../../../styles/content/boostLink/BoostLinkContainerStyled';
 import { HStyled } from '../../../../styles/global/HStyled';
 import bg from './../../../../images/bg-boost-desktop.svg';
+import { scrollToElement } from '../../../../helpers/scrollToElem';
 
 const BoostLink = () => {
   return (
@@ -9,7 +10,12 @@ const BoostLink = () => {
       <HStyled titlelevel="h2" color="white">
         Boost your links today
       </HStyled>
-      <ButtonStyled type="primary" color="primary" shape={'circle'}>
+      <ButtonStyled
+        type="primary"
+        color="primary"
+        shape={'circle'}
+        onClick={() => scrollToElement('inputShort')}
+      >
         Get Started
       </ButtonStyled>
     </BoostLinkContainerStyled>

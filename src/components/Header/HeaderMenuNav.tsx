@@ -7,13 +7,19 @@ import { HeaderMenuDescButtonStyled } from '../../styles/header/HeaderMenuDescBu
 import { ButtonMenuContainer } from '../../styles/header/ButtonMenuContainer';
 import { ButtonLinkStyled } from '../../styles/global/ButtonLinkStyled';
 import { LogoIconStyled } from '../../styles/global/LogoIconStyled';
+import { scrollToElement } from '../../helpers/scrollToElem';
 
 interface HeaderMenuNavProps {
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  options: optionsHeaderLinks[];
 }
 
-const HeaderMenuNav = ({ setOpenMenu }: HeaderMenuNavProps) => {
-  const options: string[] = ['Features', 'Resources'];
+type optionsHeaderLinks = {
+  text: string;
+  to: string;
+};
+
+const HeaderMenuNav = ({ setOpenMenu, options }: HeaderMenuNavProps) => {
   return (
     <Flex flex={1} gap={25}>
       <LogoIconStyled fillcolor={'secondaryDark'} />
@@ -25,8 +31,9 @@ const HeaderMenuNav = ({ setOpenMenu }: HeaderMenuNavProps) => {
               size={'mainText'}
               type="link"
               key={index + 1}
+              onClick={() => scrollToElement(item.to)}
             >
-              {item}
+              {item.text}
             </ButtonLinkStyled>
           ))}
         </HeaderMenuDescButtonStyled>

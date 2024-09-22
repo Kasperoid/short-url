@@ -13,11 +13,12 @@ import { LogoIconStyled } from '../../styles/global/LogoIconStyled';
 import FooterLinks from './FooterLinks';
 import { FooterSocialsContainerStyled } from '../../styles/footer/FooterSocialsContainerStyled';
 import { ButtonIconStyled } from '../../styles/global/ButtonIconStyled';
+import { linksScroll } from '../../types/types';
 
 type linksColumnType = {
   key: number;
   columnTitle: string;
-  columnLinks: string[];
+  columnLinks: linksScroll[];
 };
 
 const FooterContainer = () => {
@@ -25,12 +26,15 @@ const FooterContainer = () => {
     {
       key: Math.random(),
       columnTitle: 'Features',
-      columnLinks: ['Link shortening', 'Analytics'],
+      columnLinks: [
+        { text: 'Link shortening', to: 'inputShort' },
+        { text: 'Analytics', to: 'statistic' },
+      ],
     },
     {
       key: Math.random(),
       columnTitle: 'Company',
-      columnLinks: ['About'],
+      columnLinks: [{ text: 'About', to: 'intro' }],
     },
   ];
   const socialColumn: JSX.Element[] = [
