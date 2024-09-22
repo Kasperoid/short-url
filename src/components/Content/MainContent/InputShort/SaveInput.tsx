@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import { useClipboard } from 'use-clipboard-copy';
-import { ButtonLinkStyled } from '../../../../styles/ButtonLinkStyled';
-import { ButtonStyled } from '../../../../styles/ButtonStyled';
+import { ButtonLinkStyled } from '../../../../styles/global/ButtonLinkStyled';
+import { ButtonStyled } from '../../../../styles/global/ButtonStyled';
 import { SaveInputCardStyled } from '../../../../styles/content/saveInput/SaveInputCardStyled';
 import { SaveLinkContainerStyled } from '../../../../styles/content/saveInput/SaveLinkContainerStyled';
-import { TextStyled } from '../../../../styles/TextStyled';
+import { TextStyled } from '../../../../styles/global/TextStyled';
 import { saveInput } from '../../../../types/types';
 
 interface saveInputProps extends saveInput {

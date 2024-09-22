@@ -1,6 +1,6 @@
 import React from 'react';
 import { MobMenuStyled } from '../../styles/header/MobMenuStyled';
-import { ButtonStyled } from '../../styles/ButtonStyled';
+import { ButtonStyled } from '../../styles/global/ButtonStyled';
 
 interface HeaderMobMenuProps {
   openMenu: boolean;

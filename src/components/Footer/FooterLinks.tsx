@@ -1,6 +1,6 @@
 import { Flex, Space } from 'antd';
-import { ButtonLinkStyled } from '../../styles/ButtonLinkStyled';
-import { HStyled } from '../../styles/HStyled';
+import { ButtonLinkStyled } from '../../styles/global/ButtonLinkStyled';
+import { HStyled } from '../../styles/global/HStyled';
 
 type FooterLinksProps = {
   columnTitle: string;

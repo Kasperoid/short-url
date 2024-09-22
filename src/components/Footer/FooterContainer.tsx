@@ -9,10 +9,10 @@ import { ContainerStyled } from '../../styles/containers/ContainerStyled';
 import { ContainerInnerStyled } from '../../styles/containers/ContainerInnerStyled';
 import { FooterContainerStyled } from '../../styles/footer/FooterContainerStyled';
 import { FooterInnerContainerStyled } from '../../styles/footer/FooterInnerContainerStyled';
-import { LogoIconStyled } from '../../styles/LogoIconStyled';
+import { LogoIconStyled } from '../../styles/global/LogoIconStyled';
 import FooterLinks from './FooterLinks';
 import { FooterSocialsContainerStyled } from '../../styles/footer/FooterSocialsContainerStyled';
-import { ButtonIconStyled } from '../../styles/ButtonIconStyled';
+import { ButtonIconStyled } from '../../styles/global/ButtonIconStyled';
 
 type linksColumnType = {
   key: number;

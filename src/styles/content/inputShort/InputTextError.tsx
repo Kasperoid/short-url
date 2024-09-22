@@ -1,7 +1,7 @@
 import { Typography } from 'antd';
 import { TextProps } from 'antd/es/typography/Text';
 import { styled } from 'styled-components';
-import { baseTheme } from '../../theme';
+import { baseTheme } from '../../../types/theme';
 
 const { Text } = Typography;
 export const InputTextError = styled(Text)<TextProps>`

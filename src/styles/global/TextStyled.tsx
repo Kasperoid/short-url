@@ -6,7 +6,7 @@ import {
   TextColorType,
   TextSizeType,
   TextWeightType,
-} from './theme';
+} from '../../types/theme';
 
 const { Text } = Typography;
 

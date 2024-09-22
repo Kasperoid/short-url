@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { baseTheme } from '../../theme';
+import { baseTheme } from '../../../types/theme';
 
 export const StatisticLineStyled = styled.div`
   && {

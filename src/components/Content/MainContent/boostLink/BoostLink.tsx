@@ -1,6 +1,6 @@
-import { ButtonStyled } from '../../../../styles/ButtonStyled';
+import { ButtonStyled } from '../../../../styles/global/ButtonStyled';
 import { BoostLinkContainerStyled } from '../../../../styles/content/boostLink/BoostLinkContainerStyled';
-import { HStyled } from '../../../../styles/HStyled';
+import { HStyled } from '../../../../styles/global/HStyled';
 import bg from './../../../../images/bg-boost-desktop.svg';
 
 const BoostLink = () => {

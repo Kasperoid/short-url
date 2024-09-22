@@ -1,7 +1,7 @@
 import { Typography } from 'antd';
 import { TitleProps } from 'antd/es/typography/Title';
 import { styled } from 'styled-components';
-import { baseTheme, TextColorType, TitleSizeType } from './theme';
+import { baseTheme, TextColorType, TitleSizeType } from '../../types/theme';
 
 const { Title } = Typography;
 

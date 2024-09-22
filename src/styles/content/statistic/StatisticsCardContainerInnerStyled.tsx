@@ -1,6 +1,6 @@
 import { Flex, FlexProps } from 'antd';
 import { styled } from 'styled-components';
-import { baseTheme } from '../../theme';
+import { baseTheme } from '../../../types/theme';
 
 export const StatisticsCardContainerInnerStyled = styled(Flex)<FlexProps>`
   && {

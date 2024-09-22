@@ -1,6 +1,6 @@
 import { Space, SpaceProps } from 'antd';
 import { styled } from 'styled-components';
-import { baseTheme } from '../../theme';
+import { baseTheme } from '../../../types/theme';
 
 interface BoostLinkContainerProps extends SpaceProps {
   bg: React.FunctionComponent<React.SVGAttributes<SVGElement>>;

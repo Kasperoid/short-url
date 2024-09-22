@@ -1,6 +1,6 @@
 import { Row, RowProps } from 'antd';
 import { styled } from 'styled-components';
-import { baseTheme } from '../../theme';
+import { baseTheme } from '../../../types/theme';
 
 export const IntroRow = styled(Row)<RowProps>`
   && {

@@ -5,8 +5,8 @@ import { HeaderBurgerMenuStyled } from '../../styles/header/HeaderBurgerMenuStyl
 import { ButtonBurgerContainerStyled } from '../../styles/header/ButtonBurgerContainerStyled';
 import { HeaderMenuDescButtonStyled } from '../../styles/header/HeaderMenuDescButtonStyled';
 import { ButtonMenuContainer } from '../../styles/header/ButtonMenuContainer';
-import { ButtonLinkStyled } from '../../styles/ButtonLinkStyled';
-import { LogoIconStyled } from '../../styles/LogoIconStyled';
+import { ButtonLinkStyled } from '../../styles/global/ButtonLinkStyled';
+import { LogoIconStyled } from '../../styles/global/LogoIconStyled';
 
 interface HeaderMenuNavProps {
   setOpenMenu: React.Dispatch<React.SetStateAction<boolean>>;

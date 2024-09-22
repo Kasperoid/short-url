@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import { StatisticsCardContainerInnerStyled } from '../../../../styles/content/statistic/StatisticsCardContainerInnerStyled';
 import { StatisticsCardContainerStyled } from '../../../../styles/content/statistic/StatisticsCardContainerStyled';
-import { HStyled } from '../../../../styles/HStyled';
-import { TextStyled } from '../../../../styles/TextStyled';
+import { HStyled } from '../../../../styles/global/HStyled';
+import { TextStyled } from '../../../../styles/global/TextStyled';
 
 type StatisticsCardProps = {
   title: string;

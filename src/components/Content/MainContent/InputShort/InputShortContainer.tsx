@@ -4,7 +4,7 @@ import { InputContainerStyled } from '../../../../styles/content/inputShort/Inpu
 import { InputContainerInnerStyled } from '../../../../styles/content/inputShort/InputContainerInnerStyled';
 import { SaveInputContainerStyled } from '../../../../styles/content/inputShort/SaveInputContainerStyled';
 import bg from './../../../../images/bg-shorten-desktop.svg';
-import { ButtonStyled } from '../../../../styles/ButtonStyled';
+import { ButtonStyled } from '../../../../styles/global/ButtonStyled';
 import { InputShortStyled } from '../../../../styles/content/inputShort/InputShortStyled';
 import { InputTextError } from '../../../../styles/content/inputShort/InputTextError';
 import { useState, useEffect } from 'react';

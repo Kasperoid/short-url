@@ -1,7 +1,7 @@
 import { Flex } from 'antd';
 import StatisticsCards from './StatisticsCards';
-import { HStyled } from '../../../../styles/HStyled';
-import { TextStyled } from '../../../../styles/TextStyled';
+import { HStyled } from '../../../../styles/global/HStyled';
+import { TextStyled } from '../../../../styles/global/TextStyled';
 import { StatisticHeaderContainerStyled } from '../../../../styles/content/statistic/StatisticHeaderContainerStyled';
 import { StatisticsContainerStyled } from '../../../../styles/content/statistic/StatisticsContainerStyled';
 

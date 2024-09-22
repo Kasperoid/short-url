@@ -1,12 +1,12 @@
 import { Col, Space, Flex } from 'antd';
 import { ContainerStyled } from '../../../styles/containers/ContainerStyled';
 import { ContainerInnerStyled } from '../../../styles/containers/ContainerInnerStyled';
-import { ButtonStyled } from '../../../styles/ButtonStyled';
+import { ButtonStyled } from '../../../styles/global/ButtonStyled';
 import { IntroSvg } from '../../Icons/Icons';
 import { IntroRow } from '../../../styles/content/intro/IntroRow';
 import { IntroTextContainerStyled } from '../../../styles/content/intro/IntroTextContainerStyled';
-import { HStyled } from '../../../styles/HStyled';
-import { TextStyled } from '../../../styles/TextStyled';
+import { HStyled } from '../../../styles/global/HStyled';
+import { TextStyled } from '../../../styles/global/TextStyled';
 
 const IntroContainer = () => {
   return (
