@@ -8,6 +8,7 @@ interface MobMenuStyledProps extends FlexProps {
 
 export const MobMenuStyled = styled(Flex)<MobMenuStyledProps>`
   && {
+    display: flex;
     opacity: ${({ $active }) => ($active ? 1 : 0)};
     padding: 25px 15px;
     position: absolute;
@@ -18,5 +19,13 @@ export const MobMenuStyled = styled(Flex)<MobMenuStyledProps>`
     border-radius: ${baseTheme.border.radius.round}px;
     z-index: ${({ $active }) => ($active ? 100 : -1)};
     transition: opacity 0.5s;
+
+    @media (min-width: 576px) {
+      display: none;
+    }
+
+    @media (${baseTheme.size.media.xs}) {
+      display: flex;
+    }
   }
 `;
