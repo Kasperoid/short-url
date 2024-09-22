@@ -11,3 +11,8 @@ export type saveInput = {
   inputUrl: string;
   shortUrl: string;
 };
+
+export type linksScroll = {
+  text: string;
+  to: string;
+};
