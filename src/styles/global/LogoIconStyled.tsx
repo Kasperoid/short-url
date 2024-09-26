@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 import { LogoIcon } from '../../components/Icons/Icons';
-import { baseTheme, BgColorType } from '../../types/theme';
+import { baseTheme, BgColorType } from '../theme';
 
 interface LogoIconProps {
   fillcolor: keyof BgColorType;

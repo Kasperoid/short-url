@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { baseTheme } from '../../../types/theme';
+import { baseTheme } from '../../theme';
 
 interface InputContainerInnerProps {
   $bg: React.FunctionComponent<React.SVGAttributes<SVGElement>>;

@@ -1,6 +1,6 @@
 import { Button, ButtonProps } from 'antd';
 import { styled } from 'styled-components';
-import { baseTheme, BgColorType } from '../../types/theme';
+import { baseTheme, BgColorType } from '../theme';
 
 interface PrimaryButtonProps extends ButtonProps {
   color?: keyof BgColorType;
