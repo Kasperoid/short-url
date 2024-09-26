@@ -7,53 +7,54 @@ import bg from './../../../../images/bg-shorten-desktop.svg';
 import { ButtonStyled } from '../../../../styles/global/ButtonStyled';
 import { InputShortStyled } from '../../../../styles/content/inputShort/InputShortStyled';
 import { InputTextError } from '../../../../styles/content/inputShort/InputTextError';
-import { useState, useEffect } from 'react';
-import { errorType, saveInput } from '../../../../types/types';
+import { useState, useEffect, useRef } from 'react';
+import { saveInput } from '../../../../types/types';
 import { fetcher } from '../../../../helpers/fetcher';
-import { useSWRConfig } from 'swr';
+import useSWRMutation from 'swr/mutation';
 import { FETCH_URL } from '../../../../constants';
-import axios from 'axios';
 
 const InputShortContainer = () => {
-  const inputButtonClickHandler = async () => {
-    try {
-      setError(null);
-      const originalUrl = inputValue;
-      setInputValue('');
-      const resultUrl = await mutate(FETCH_URL, fetcher(originalUrl));
-      const resultObj: saveInput = {
-        id: Math.random().toString(),
-        inputUrl: originalUrl,
-        shortUrl: resultUrl,
-      };
-      setSaveInput((prevState) => {
+  const searchInputHandler = () => {
+    saveObj.current = { id: '', shortUrl: '', inputUrl: '' };
+    trigger(inputValue);
+    saveObj.current = {
+      ...saveObj.current,
+      id: Math.random().toString(),
+      inputUrl: inputValue,
+    };
+    setInputValue('');
+  };
+  const { trigger, data, error } = useSWRMutation(FETCH_URL, fetcher, {
+    throwOnError: false,
+  });
+  const [copied, copiedSet] = useState<string | null>(null);
+  const [saveInputs, setSaveInputs] = useState<saveInput[]>([]);
+  const [inputValue, setInputValue] = useState<string>('');
+  const saveObj = useRef<saveInput>({
+    id: '',
+    shortUrl: '',
+    inputUrl: '',
+  });
+
+  useEffect(() => {
+    if (data) {
+      console.log(saveObj.current);
+      saveObj.current = { ...saveObj.current, shortUrl: data };
+      setSaveInputs(prevState => {
         const resultState = [
-          resultObj,
+          saveObj.current,
           ...prevState.filter((_, index) => index < 4),
         ];
         sessionStorage.setItem('saveInputs', JSON.stringify(resultState));
         return resultState;
       });
-    } catch (e) {
-      if (axios.isAxiosError(e)) {
-        const errorObj: errorType = {
-          message: e.response?.data,
-        };
-        setError(errorObj);
-      }
     }
-  };
+  }, [data]);
 
   useEffect(() => {
     const sessionInputs: string | null = sessionStorage.getItem('saveInputs');
-    sessionInputs && setSaveInput(JSON.parse(sessionInputs));
+    sessionInputs && setSaveInputs(JSON.parse(sessionInputs));
   }, []);
-
-  const { mutate } = useSWRConfig();
-  const [error, setError] = useState<errorType | null>(null);
-  const [copied, copiedSet] = useState<string | null>(null);
-  const [saveInput, setSaveInput] = useState<saveInput[]>([]);
-  const [inputValue, setInputValue] = useState<string>('');
 
   return (
     <InputContainerStyled>
@@ -65,7 +66,7 @@ const InputShortContainer = () => {
               value={inputValue}
               status={error ? 'error' : ''}
               placeholder="Shorten a link here..."
-              onPressEnter={() => inputButtonClickHandler()}
+              onPressEnter={() => searchInputHandler()}
               onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 setInputValue(event.target.value)
               }
@@ -76,14 +77,14 @@ const InputShortContainer = () => {
           <ButtonStyled
             type="primary"
             color="primary"
-            onClick={() => inputButtonClickHandler()}
+            onClick={() => searchInputHandler()}
           >
             Shorten It!
           </ButtonStyled>
         </Flex>
       </InputContainerInnerStyled>
       <SaveInputContainerStyled vertical gap={12}>
-        {saveInput.map((item, index) => (
+        {saveInputs.map((item, index) => (
           <SaveInput
             key={index + 1}
             {...item}
