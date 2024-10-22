@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/short-url/static/css/main.58462fbc.css",
+    "main.js": "/short-url/static/js/main.1fbcc297.js",
+    "index.html": "/short-url/index.html",
+    "static/media/bg-boost-desktop.svg": "/short-url/static/media/bg-boost-desktop.772154c9b0e451733f5ef5a737ffe720.svg",
+    "static/media/bg-shorten-desktop.svg": "/short-url/static/media/bg-shorten-desktop.0d9742f433f4b0d8752b40ccf28727af.svg",
+    "main.58462fbc.css.map": "/short-url/static/css/main.58462fbc.css.map",
+    "main.1fbcc297.js.map": "/short-url/static/js/main.1fbcc297.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58462fbc.css",
+    "static/js/main.1fbcc297.js"
+  ]
+}
