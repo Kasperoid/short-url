@@ -6,7 +6,7 @@ import {
   TextColorType,
   TextSizeType,
   TextWeightType,
-} from '../../types/theme';
+} from '../theme';
 
 interface ButtonLink extends Omit<ButtonProps, 'color' | 'size'> {
   color?: keyof TextColorType;

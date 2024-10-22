@@ -1,6 +1,6 @@
 import { Flex } from 'antd';
 import { styled } from 'styled-components';
-import { baseTheme } from '../../types/theme';
+import { baseTheme } from '../theme';
 
 export const ButtonMenuContainer = styled(Flex)`
   && {

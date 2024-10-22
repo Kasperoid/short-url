@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { baseTheme, BgColorType } from '../../types/theme';
+import { baseTheme, BgColorType } from '../theme';
 
 interface ContainerProps {
   $bgc?: keyof BgColorType;

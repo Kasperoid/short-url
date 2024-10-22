@@ -1,6 +1,6 @@
 import { Col, ColProps } from 'antd';
 import { styled } from 'styled-components';
-import { baseTheme } from '../../../types/theme';
+import { baseTheme } from '../../theme';
 
 interface StatisticsCardContainerProps extends ColProps {
   index: number;
